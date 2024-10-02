@@ -1,0 +1,321 @@
+.wpcdpk {
+    z-index: 999999 !important;
+}
+
+.only-time .wpcdpk--nav, .only-time .wpcdpk--content {
+    display: none !important;
+}
+
+.only-time .wpcdpk--time {
+    border-top: none !important;
+}
+
+.wooct_tab a:before {
+    content: '\f469' !important;
+}
+
+#wooct_settings {
+    box-sizing: border-box;
+    position: relative;
+}
+
+#wooct_settings input[type="search"], #wooct_settings input[type="text"], #wooct_settings input[type="number"] {
+    display: inline-block;
+    box-shadow: none !important;
+    height: 30px;
+    font-size: 13px;
+    line-height: 30px;
+    padding: 0 10px;
+    margin: 0 5px 0 0 !important;
+    border: 1px solid #7e8993 !important;
+    box-sizing: border-box;
+    background-color: #fff !important;
+    background-repeat: no-repeat;
+    background-position: left center;
+    cursor: pointer;
+    outline: none;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    -webkit-appearance: none;
+}
+
+#wooct_settings .wooct_current_time {
+    padding: 12px;
+    font-size: 12px;
+    border-bottom: 1px dashed #eee;
+}
+
+#wooct_settings .wooct_preview {
+    border-bottom: 1px dashed #eee;
+    border-radius: 0;
+}
+
+.wooct_preview {
+    padding: 12px;
+    background-color: #fafafa;
+    position: relative;
+    border-radius: 4px;
+}
+
+.wooct_preview > span {
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    line-height: 1;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: #555;
+    color: #fff;
+}
+
+.wooct_preview .wooct_preview_inner {
+    padding: 20px;
+    border: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.wooct_preview .wooct_preview_inner label {
+    float: none;
+    width: auto;
+    margin: unset;
+}
+
+.wooct_preview .wooct_preview_inner .flipper-group label {
+    padding-top: .5em;
+}
+
+.wooct_shortcode {
+    background-color: #fafafa !important;
+    border: 2px dashed #ddd;
+    padding: 10px 15px;
+    font-size: 18px;
+}
+
+#wooct_settings .wooct_table {
+    width: 100%;
+    padding-top: 7px;
+}
+
+#wooct_settings table {
+    width: 100%;
+}
+
+#wooct_settings table tr th, #wooct_settings table tr td {
+    padding: 5px 12px;
+}
+
+#wooct_settings table tr th {
+    font-size: 12px;
+    font-weight: 400;
+    text-align: left;
+    width: 150px;
+}
+
+#wooct_settings table tr td {
+    text-align: left;
+}
+
+#wooct_settings table tr td div {
+    display: inline-block;
+    width: 100%;
+}
+
+#wooct_settings table tr td div.wp-picker-container {
+    display: inline-block;
+    width: auto;
+}
+
+#wooct_settings table tr td div.wp-picker-container .wp-picker-holder {
+    display: block;
+    width: auto;
+}
+
+#wooct_settings table tr td div.wp-picker-container .wp-picker-input-wrap label {
+    float: none;
+    width: auto;
+    margin: auto;
+}
+
+.wooct_time_input, .wooct_date_input, .wooct_date_time_input {
+    padding-left: 40px !important;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.wooct_time_input {
+    width: 140px !important;
+    background-image: url('../images/time_bg.jpg');
+}
+
+.wooct_date_time_input {
+    width: 200px !important;
+    background-image: url('../images/time_bg.jpg');
+}
+
+.wooct_date_input {
+    width: 240px !important;
+    background-image: url('../images/date_bg.jpg');
+}
+
+.wooct_time_input:focus {
+    background-image: url('../images/time_hover_bg.jpg');
+    border-color: #2c4b81 !important;
+    box-shadow: none !important;
+}
+
+.wooct_date_input:focus, .wooct_date_time_input:focus {
+    background-image: url('../images/date_hover_bg.jpg');
+    border-color: #2c4b81 !important;
+    box-shadow: none !important;
+}
+
+.wooct-icon {
+    opacity: .3;
+}
+
+.wooct-icon.running {
+    opacity: 1;
+}
+
+.active[data-slug="wpc-countdown-timer"] .premium a {
+    color: #c9356e;
+}
+
+/* Variation */
+
+.wooct-variation-settings {
+    margin: 1em 0;
+}
+
+.wooct-variation-settings .form-field > label {
+    display: block !important;
+}
+
+.wooct-variation-wrap {
+    padding: 0 12px;
+    margin-top: 10px;
+    background-color: #fafafa;
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+    position: relative;
+}
+
+.wooct-variation-wrap:before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #fafafa;
+    border-width: 1px 0 0 1px;
+    border-style: solid;
+    border-color: #8c8f94;
+    transform: rotate(45deg);
+    position: absolute;
+    top: -6px;
+    left: 15px;
+}
+
+.wooct-variation-wrap table {
+    background: none !important;
+    border: none !important;
+}
+
+.wooct-variation-wrap table tr th {
+    width: 100px;
+    text-align: start;
+    font-weight: 400;
+}
+
+/* WPC Dialog */
+
+.ui-dialog.wpc-dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100102;
+    background-color: #fff;
+    border: 1px solid #dfdfdf;
+    border-radius: 0;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    color: #3c434a;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 13px;
+    line-height: 1.4em;
+}
+
+.ui-dialog.wpc-dialog .ui-dialog-titlebar {
+    background: #fcfcfc;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #dfdfdf;
+    border-radius: 0;
+    height: 36px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 36px;
+    padding: 0 36px 0 16px
+}
+
+.ui-dialog.wpc-dialog .ui-dialog-titlebar .ui-dialog-title {
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ui-dialog.wpc-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close {
+    background: 0 0;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #666;
+    cursor: pointer;
+    display: block;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    outline: none;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.ui-dialog.wpc-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close:before {
+    font: 400 20px/1 dashicons;
+    vertical-align: top;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 36px;
+    width: 36px;
+    height: 36px;
+    content: '\f158';
+}
+
+.ui-dialog.wpc-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close:hover {
+    color: #00a0d2;
+}
+
+.ui-dialog.wpc-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close span {
+    display: none;
+}
+
+.ui-dialog.wpc-dialog .ui-dialog-content {
+    padding: 16px;
+    overflow: auto;
+}
