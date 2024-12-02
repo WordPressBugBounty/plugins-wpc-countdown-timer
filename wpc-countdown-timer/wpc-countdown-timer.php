@@ -3,21 +3,23 @@
 Plugin Name: WPC Countdown Timer for WooCommerce
 Plugin URI: https://wpclever.net/
 Description: WPC Countdown Timer helps you display countdown timer in single product pages and shop page.
-Version: 3.1.0
+Version: 3.1.1
 Author: WPClever
 Author URI: https://wpclever.net
 Text Domain: wpc-countdown-timer
 Domain Path: /languages/
 Requires Plugins: woocommerce
 Requires at least: 4.0
-Tested up to: 6.6
+Tested up to: 6.7
 WC requires at least: 3.0
-WC tested up to: 9.2
+WC tested up to: 9.4
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 defined( 'ABSPATH' ) || exit;
 
-! defined( 'WOOCT_VERSION' ) && define( 'WOOCT_VERSION', '3.1.0' );
+! defined( 'WOOCT_VERSION' ) && define( 'WOOCT_VERSION', '3.1.1' );
 ! defined( 'WOOCT_LITE' ) && define( 'WOOCT_LITE', __FILE__ );
 ! defined( 'WOOCT_FILE' ) && define( 'WOOCT_FILE', __FILE__ );
 ! defined( 'WOOCT_URI' ) && define( 'WOOCT_URI', plugin_dir_url( __FILE__ ) );
@@ -36,9 +38,6 @@ if ( ! function_exists( 'wooct_init' ) ) {
 	add_action( 'plugins_loaded', 'wooct_init', 11 );
 
 	function wooct_init() {
-		// load text-domain
-		load_plugin_textdomain( 'wpc-countdown-timer', false, basename( __DIR__ ) . '/languages/' );
-
 		if ( ! function_exists( 'WC' ) || ! version_compare( WC()->version, '3.0', '>=' ) ) {
 			add_action( 'admin_notices', 'wooct_notice_wc' );
 
@@ -62,6 +61,9 @@ if ( ! function_exists( 'wooct_init' ) ) {
 				function __construct() {
 					self::$settings     = (array) get_option( 'wooct_settings', [] );
 					self::$localization = (array) get_option( 'wooct_localization', [] );
+
+					// Init
+					add_action( 'init', [ $this, 'init' ] );
 
 					// Settings
 					add_action( 'admin_init', [ $this, 'register_settings' ] );
@@ -139,6 +141,11 @@ if ( ! function_exists( 'wooct_init' ) ) {
 
 					// WPC Variation Bulk Editor
 					add_action( 'wpcvb_bulk_update_variation', [ $this, 'bulk_update_variation' ], 99, 2 );
+				}
+
+				function init() {
+					// load text-domain
+					load_plugin_textdomain( 'wpc-countdown-timer', false, basename( WOOCT_DIR ) . '/languages/' );
 				}
 
 				function register_settings() {
