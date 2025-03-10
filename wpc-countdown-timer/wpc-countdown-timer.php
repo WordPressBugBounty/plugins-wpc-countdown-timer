@@ -3,7 +3,7 @@
 Plugin Name: WPC Countdown Timer for WooCommerce
 Plugin URI: https://wpclever.net/
 Description: WPC Countdown Timer helps you display countdown timer in single product pages and shop page.
-Version: 3.1.1
+Version: 3.1.2
 Author: WPClever
 Author URI: https://wpclever.net
 Text Domain: wpc-countdown-timer
@@ -12,14 +12,14 @@ Requires Plugins: woocommerce
 Requires at least: 4.0
 Tested up to: 6.7
 WC requires at least: 3.0
-WC tested up to: 9.4
+WC tested up to: 9.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 defined( 'ABSPATH' ) || exit;
 
-! defined( 'WOOCT_VERSION' ) && define( 'WOOCT_VERSION', '3.1.1' );
+! defined( 'WOOCT_VERSION' ) && define( 'WOOCT_VERSION', '3.1.2' );
 ! defined( 'WOOCT_LITE' ) && define( 'WOOCT_LITE', __FILE__ );
 ! defined( 'WOOCT_FILE' ) && define( 'WOOCT_FILE', __FILE__ );
 ! defined( 'WOOCT_URI' ) && define( 'WOOCT_URI', plugin_dir_url( __FILE__ ) );
@@ -172,9 +172,12 @@ if ( ! function_exists( 'wooct_init' ) ) {
                             <p>
 								<?php printf( /* translators: stars */ esc_html__( 'Thank you for using our plugin! If you are satisfied, please reward it a full five-star %s rating.', 'wpc-countdown-timer' ), '<span style="color:#ffb900">&#9733;&#9733;&#9733;&#9733;&#9733;</span>' ); ?>
                                 <br/>
-                                <a href="<?php echo esc_url( WOOCT_REVIEWS ); ?>" target="_blank"><?php esc_html_e( 'Reviews', 'wpc-countdown-timer' ); ?></a> |
-                                <a href="<?php echo esc_url( WOOCT_CHANGELOG ); ?>" target="_blank"><?php esc_html_e( 'Changelog', 'wpc-countdown-timer' ); ?></a> |
-                                <a href="<?php echo esc_url( WOOCT_DISCUSSION ); ?>" target="_blank"><?php esc_html_e( 'Discussion', 'wpc-countdown-timer' ); ?></a>
+                                <a href="<?php echo esc_url( WOOCT_REVIEWS ); ?>"
+                                   target="_blank"><?php esc_html_e( 'Reviews', 'wpc-countdown-timer' ); ?></a> |
+                                <a href="<?php echo esc_url( WOOCT_CHANGELOG ); ?>"
+                                   target="_blank"><?php esc_html_e( 'Changelog', 'wpc-countdown-timer' ); ?></a> |
+                                <a href="<?php echo esc_url( WOOCT_DISCUSSION ); ?>"
+                                   target="_blank"><?php esc_html_e( 'Discussion', 'wpc-countdown-timer' ); ?></a>
                             </p>
                         </div>
 						<?php if ( isset( $_GET['settings-updated'] ) && $_GET['settings-updated'] ) { ?>
@@ -184,19 +187,25 @@ if ( ! function_exists( 'wooct_init' ) ) {
 						<?php } ?>
                         <div class="wpclever_settings_page_nav">
                             <h2 class="nav-tab-wrapper">
-                                <a href="<?php echo esc_url( admin_url( 'admin.php?page=wpclever-wooct&tab=settings' ) ); ?>" class="<?php echo $active_tab === 'settings' ? 'nav-tab nav-tab-active' : 'nav-tab'; ?>">
+                                <a href="<?php echo esc_url( admin_url( 'admin.php?page=wpclever-wooct&tab=settings' ) ); ?>"
+                                   class="<?php echo $active_tab === 'settings' ? 'nav-tab nav-tab-active' : 'nav-tab'; ?>">
 									<?php esc_html_e( 'Settings', 'wpc-countdown-timer' ); ?>
                                 </a>
-                                <a href="<?php echo esc_url( admin_url( 'admin.php?page=wpclever-wooct&tab=localization' ) ); ?>" class="<?php echo $active_tab === 'localization' ? 'nav-tab nav-tab-active' : 'nav-tab'; ?>">
+                                <a href="<?php echo esc_url( admin_url( 'admin.php?page=wpclever-wooct&tab=localization' ) ); ?>"
+                                   class="<?php echo $active_tab === 'localization' ? 'nav-tab nav-tab-active' : 'nav-tab'; ?>">
 									<?php esc_html_e( 'Localization', 'wpc-countdown-timer' ); ?>
                                 </a>
-                                <a href="<?php echo esc_url( admin_url( 'admin.php?page=wpclever-wooct&tab=shortcode' ) ); ?>" class="<?php echo $active_tab === 'shortcode' ? 'nav-tab nav-tab-active' : 'nav-tab'; ?>">
+                                <a href="<?php echo esc_url( admin_url( 'admin.php?page=wpclever-wooct&tab=shortcode' ) ); ?>"
+                                   class="<?php echo $active_tab === 'shortcode' ? 'nav-tab nav-tab-active' : 'nav-tab'; ?>">
 									<?php esc_html_e( 'Shortcode [...]', 'wpc-countdown-timer' ); ?>
                                 </a>
-                                <a href="<?php echo esc_url( admin_url( 'admin.php?page=wpclever-wooct&tab=premium' ) ); ?>" class="<?php echo $active_tab === 'premium' ? 'nav-tab nav-tab-active' : 'nav-tab'; ?>" style="color: #c9356e">
+                                <a href="<?php echo esc_url( admin_url( 'admin.php?page=wpclever-wooct&tab=premium' ) ); ?>"
+                                   class="<?php echo $active_tab === 'premium' ? 'nav-tab nav-tab-active' : 'nav-tab'; ?>"
+                                   style="color: #c9356e">
 									<?php esc_html_e( 'Premium Version', 'wpc-countdown-timer' ); ?>
                                 </a>
-                                <a href="<?php echo esc_url( admin_url( 'admin.php?page=wpclever-kit' ) ); ?>" class="nav-tab">
+                                <a href="<?php echo esc_url( admin_url( 'admin.php?page=wpclever-kit' ) ); ?>"
+                                   class="nav-tab">
 									<?php esc_html_e( 'Essential Kit', 'wpc-countdown-timer' ); ?>
                                 </a>
                             </h2>
@@ -249,7 +258,9 @@ if ( ! function_exists( 'wooct_init' ) ) {
                                             </th>
                                             <td>
                                                 <label>
-                                                    <input type="text" name="wooct_settings[text_above]" class="large-text" value="<?php echo stripslashes( self::get_setting( 'text_above' ) ); ?>"/>
+                                                    <input type="text" name="wooct_settings[text_above]"
+                                                           class="large-text"
+                                                           value="<?php echo stripslashes( self::get_setting( 'text_above' ) ); ?>"/>
                                                 </label>
                                             </td>
                                         </tr>
@@ -259,7 +270,9 @@ if ( ! function_exists( 'wooct_init' ) ) {
                                             </th>
                                             <td>
                                                 <label>
-                                                    <input type="text" name="wooct_settings[text_under]" class="large-text" value="<?php echo stripslashes( self::get_setting( 'text_under' ) ); ?>"/>
+                                                    <input type="text" name="wooct_settings[text_under]"
+                                                           class="large-text"
+                                                           value="<?php echo stripslashes( self::get_setting( 'text_under' ) ); ?>"/>
                                                 </label>
                                             </td>
                                         </tr>
@@ -269,7 +282,9 @@ if ( ! function_exists( 'wooct_init' ) ) {
                                             </th>
                                             <td>
                                                 <label>
-                                                    <input type="text" name="wooct_settings[text_ended]" class="large-text" value="<?php echo stripslashes( self::get_setting( 'text_ended' ) ); ?>"/>
+                                                    <input type="text" name="wooct_settings[text_ended]"
+                                                           class="large-text"
+                                                           value="<?php echo stripslashes( self::get_setting( 'text_ended' ) ); ?>"/>
                                                 </label>
                                             </td>
                                         </tr>
@@ -305,7 +320,9 @@ if ( ! function_exists( 'wooct_init' ) ) {
                                             <th scope="row"><?php esc_html_e( 'Day', 'wpc-countdown-timer' ); ?></th>
                                             <td>
                                                 <label>
-                                                    <input type="text" name="wooct_localization[day]" placeholder="<?php esc_attr_e( 'Day', 'wpc-countdown-timer' ); ?>" value="<?php echo esc_attr( self::localization( 'day' ) ); ?>"/>
+                                                    <input type="text" name="wooct_localization[day]"
+                                                           placeholder="<?php esc_attr_e( 'Day', 'wpc-countdown-timer' ); ?>"
+                                                           value="<?php echo esc_attr( self::localization( 'day' ) ); ?>"/>
                                                 </label>
                                             </td>
                                         </tr>
@@ -313,7 +330,9 @@ if ( ! function_exists( 'wooct_init' ) ) {
                                             <th scope="row"><?php esc_html_e( 'Days', 'wpc-countdown-timer' ); ?></th>
                                             <td>
                                                 <label>
-                                                    <input type="text" name="wooct_localization[days]" placeholder="<?php esc_attr_e( 'Days', 'wpc-countdown-timer' ); ?>" value="<?php echo esc_attr( self::localization( 'days' ) ); ?>"/>
+                                                    <input type="text" name="wooct_localization[days]"
+                                                           placeholder="<?php esc_attr_e( 'Days', 'wpc-countdown-timer' ); ?>"
+                                                           value="<?php echo esc_attr( self::localization( 'days' ) ); ?>"/>
                                                 </label>
                                             </td>
                                         </tr>
@@ -321,7 +340,9 @@ if ( ! function_exists( 'wooct_init' ) ) {
                                             <th scope="row"><?php esc_html_e( 'Hour', 'wpc-countdown-timer' ); ?></th>
                                             <td>
                                                 <label>
-                                                    <input type="text" name="wooct_localization[hour]" placeholder="<?php esc_attr_e( 'Hour', 'wpc-countdown-timer' ); ?>" value="<?php echo esc_attr( self::localization( 'hour' ) ); ?>"/>
+                                                    <input type="text" name="wooct_localization[hour]"
+                                                           placeholder="<?php esc_attr_e( 'Hour', 'wpc-countdown-timer' ); ?>"
+                                                           value="<?php echo esc_attr( self::localization( 'hour' ) ); ?>"/>
                                                 </label>
                                             </td>
                                         </tr>
@@ -329,7 +350,9 @@ if ( ! function_exists( 'wooct_init' ) ) {
                                             <th scope="row"><?php esc_html_e( 'Hours', 'wpc-countdown-timer' ); ?></th>
                                             <td>
                                                 <label>
-                                                    <input type="text" name="wooct_localization[hours]" placeholder="<?php esc_attr_e( 'Hours', 'wpc-countdown-timer' ); ?>" value="<?php echo esc_attr( self::localization( 'hours' ) ); ?>"/>
+                                                    <input type="text" name="wooct_localization[hours]"
+                                                           placeholder="<?php esc_attr_e( 'Hours', 'wpc-countdown-timer' ); ?>"
+                                                           value="<?php echo esc_attr( self::localization( 'hours' ) ); ?>"/>
                                                 </label>
                                             </td>
                                         </tr>
@@ -337,7 +360,9 @@ if ( ! function_exists( 'wooct_init' ) ) {
                                             <th scope="row"><?php esc_html_e( 'Minute', 'wpc-countdown-timer' ); ?></th>
                                             <td>
                                                 <label>
-                                                    <input type="text" name="wooct_localization[minute]" placeholder="<?php esc_attr_e( 'Minute', 'wpc-countdown-timer' ); ?>" value="<?php echo esc_attr( self::localization( 'minute' ) ); ?>"/>
+                                                    <input type="text" name="wooct_localization[minute]"
+                                                           placeholder="<?php esc_attr_e( 'Minute', 'wpc-countdown-timer' ); ?>"
+                                                           value="<?php echo esc_attr( self::localization( 'minute' ) ); ?>"/>
                                                 </label>
                                             </td>
                                         </tr>
@@ -345,7 +370,9 @@ if ( ! function_exists( 'wooct_init' ) ) {
                                             <th scope="row"><?php esc_html_e( 'Minutes', 'wpc-countdown-timer' ); ?></th>
                                             <td>
                                                 <label>
-                                                    <input type="text" name="wooct_localization[minutes]" placeholder="<?php esc_attr_e( 'Minutes', 'wpc-countdown-timer' ); ?>" value="<?php echo esc_attr( self::localization( 'minutes' ) ); ?>"/>
+                                                    <input type="text" name="wooct_localization[minutes]"
+                                                           placeholder="<?php esc_attr_e( 'Minutes', 'wpc-countdown-timer' ); ?>"
+                                                           value="<?php echo esc_attr( self::localization( 'minutes' ) ); ?>"/>
                                                 </label>
                                             </td>
                                         </tr>
@@ -353,7 +380,9 @@ if ( ! function_exists( 'wooct_init' ) ) {
                                             <th scope="row"><?php esc_html_e( 'Second', 'wpc-countdown-timer' ); ?></th>
                                             <td>
                                                 <label>
-                                                    <input type="text" name="wooct_localization[second]" placeholder="<?php esc_attr_e( 'Second', 'wpc-countdown-timer' ); ?>" value="<?php echo esc_attr( self::localization( 'second' ) ); ?>"/>
+                                                    <input type="text" name="wooct_localization[second]"
+                                                           placeholder="<?php esc_attr_e( 'Second', 'wpc-countdown-timer' ); ?>"
+                                                           value="<?php echo esc_attr( self::localization( 'second' ) ); ?>"/>
                                                 </label>
                                             </td>
                                         </tr>
@@ -361,7 +390,9 @@ if ( ! function_exists( 'wooct_init' ) ) {
                                             <th scope="row"><?php esc_html_e( 'Seconds', 'wpc-countdown-timer' ); ?></th>
                                             <td>
                                                 <label>
-                                                    <input type="text" name="wooct_localization[seconds]" placeholder="<?php esc_attr_e( 'Seconds', 'wpc-countdown-timer' ); ?>" value="<?php echo esc_attr( self::localization( 'seconds' ) ); ?>"/>
+                                                    <input type="text" name="wooct_localization[seconds]"
+                                                           placeholder="<?php esc_attr_e( 'Seconds', 'wpc-countdown-timer' ); ?>"
+                                                           value="<?php echo esc_attr( self::localization( 'seconds' ) ); ?>"/>
                                                 </label>
                                             </td>
                                         </tr>
@@ -387,11 +418,13 @@ if ( ! function_exists( 'wooct_init' ) ) {
                                         <th><?php esc_html_e( 'Shortcode', 'wpc-countdown-timer' ); ?></th>
                                         <td>
                                             <label>
-                                                <textarea class="wooct_shortcode" style="width: 100%" readonly><?php esc_html_e( 'Configure the below options to build shortcode and you can place it where you want.', 'wpc-countdown-timer' ); ?></textarea>
+                                                <textarea class="wooct_shortcode" style="width: 100%"
+                                                          readonly><?php esc_html_e( 'Configure the below options to build shortcode and you can place it where you want.', 'wpc-countdown-timer' ); ?></textarea>
                                             </label>
                                             <p class="description" style="color: #c9356e">
                                                 * This feature only available on Premium Version. Click
-                                                <a href="https://wpclever.net/downloads/wpc-countdown-timer?utm_source=pro&utm_medium=wooct&utm_campaign=wporg" target="_blank">here</a> to buy, just $29!
+                                                <a href="https://wpclever.net/downloads/wpc-countdown-timer?utm_source=pro&utm_medium=wooct&utm_campaign=wporg"
+                                                   target="_blank">here</a> to buy, just $29!
                                             </p>
                                         </td>
                                     </tr>
@@ -401,11 +434,14 @@ if ( ! function_exists( 'wooct_init' ) ) {
                                 <div class="wpclever_settings_page_content_text">
                                     <p>
                                         Get the Premium Version just $29!
-                                        <a href="https://wpclever.net/downloads/wpc-countdown-timer?utm_source=pro&utm_medium=wooct&utm_campaign=wporg" target="_blank">https://wpclever.net/downloads/wpc-countdown-timer</a>
+                                        <a href="https://wpclever.net/downloads/wpc-countdown-timer?utm_source=pro&utm_medium=wooct&utm_campaign=wporg"
+                                           target="_blank">https://wpclever.net/downloads/wpc-countdown-timer</a>
                                     </p>
                                     <p><strong>Extra features for Premium Version:</strong></p>
                                     <ul style="margin-bottom: 0">
-                                        <li>- Build your custom countdown timer to place everywhere you want by using shortcode builder.</li>
+                                        <li>- Build your custom countdown timer to place everywhere you want by using
+                                            shortcode builder.
+                                        </li>
                                         <li>- Configure countdown timer on a variation basis.</li>
                                         <li>- Get the lifetime update & premium support.</li>
                                     </ul>
@@ -418,13 +454,17 @@ if ( ! function_exists( 'wooct_init' ) ) {
                             </div>
                             <div class="wpclever_settings_page_suggestion_content">
                                 <div>
-                                    To display custom engaging real-time messages on any wished positions, please install
-                                    <a href="https://wordpress.org/plugins/wpc-smart-messages/" target="_blank">WPC Smart Messages</a> plugin. It's free!
+                                    To display custom engaging real-time messages on any wished positions, please
+                                    install
+                                    <a href="https://wordpress.org/plugins/wpc-smart-messages/" target="_blank">WPC
+                                        Smart Messages</a> plugin. It's free!
                                 </div>
                                 <div>
                                     Wanna save your precious time working on variations? Try our brand-new free plugin
-                                    <a href="https://wordpress.org/plugins/wpc-variation-bulk-editor/" target="_blank">WPC Variation Bulk Editor</a> and
-                                    <a href="https://wordpress.org/plugins/wpc-variation-duplicator/" target="_blank">WPC Variation Duplicator</a>.
+                                    <a href="https://wordpress.org/plugins/wpc-variation-bulk-editor/" target="_blank">WPC
+                                        Variation Bulk Editor</a> and
+                                    <a href="https://wordpress.org/plugins/wpc-variation-duplicator/" target="_blank">WPC
+                                        Variation Duplicator</a>.
                                 </div>
                             </div>
                         </div>
@@ -478,7 +518,8 @@ if ( ! function_exists( 'wooct_init' ) ) {
 						?>
                         <p class="form-field form-row" style="color: #c9356e">
                             * This feature only available on Premium Version. Click
-                            <a href="https://wpclever.net/downloads/wpc-countdown-timer?utm_source=pro&utm_medium=wooct&utm_campaign=wporg" target="_blank">here</a> to buy, just $29!
+                            <a href="https://wpclever.net/downloads/wpc-countdown-timer?utm_source=pro&utm_medium=wooct&utm_campaign=wporg"
+                               target="_blank">here</a> to buy, just $29!
                         </p>
 						<?php
 					}
@@ -814,7 +855,8 @@ if ( ! function_exists( 'wooct_init' ) ) {
 							<?php esc_html_e( 'Current time', 'wpc-countdown-timer' ); ?>
                             <code><?php echo esc_html( current_time( 'm/d/Y' ) ); ?></code>
                             <code><?php echo esc_html( current_time( 'h:i a' ) ); ?></code>
-                            <a href="<?php echo esc_url( admin_url( 'options-general.php' ) ); ?>" target="_blank"><?php esc_html_e( 'Date/time settings', 'wpc-countdown-timer' ); ?></a>
+                            <a href="<?php echo esc_url( admin_url( 'options-general.php' ) ); ?>"
+                               target="_blank"><?php esc_html_e( 'Date/time settings', 'wpc-countdown-timer' ); ?></a>
                         </div>
                         <div class="wooct_preview">
                             <span><?php esc_html_e( 'Preview', 'wpc-countdown-timer' ); ?></span>
