@@ -3,7 +3,7 @@
 Plugin Name: WPC Countdown Timer for WooCommerce
 Plugin URI: https://wpclever.net/
 Description: WPC Countdown Timer helps you display countdown timer in single product pages and shop page.
-Version: 3.1.3
+Version: 3.1.4
 Author: WPClever
 Author URI: https://wpclever.net
 Text Domain: wpc-countdown-timer
@@ -12,14 +12,14 @@ Requires Plugins: woocommerce
 Requires at least: 4.0
 Tested up to: 6.8
 WC requires at least: 3.0
-WC tested up to: 9.9
+WC tested up to: 10.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 defined( 'ABSPATH' ) || exit;
 
-! defined( 'WOOCT_VERSION' ) && define( 'WOOCT_VERSION', '3.1.3' );
+! defined( 'WOOCT_VERSION' ) && define( 'WOOCT_VERSION', '3.1.4' );
 ! defined( 'WOOCT_LITE' ) && define( 'WOOCT_LITE', __FILE__ );
 ! defined( 'WOOCT_FILE' ) && define( 'WOOCT_FILE', __FILE__ );
 ! defined( 'WOOCT_URI' ) && define( 'WOOCT_URI', plugin_dir_url( __FILE__ ) );
