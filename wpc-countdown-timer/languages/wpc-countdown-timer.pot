@@ -2,16 +2,16 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPC Countdown Timer for WooCommerce 3.1.4\n"
+"Project-Id-Version: WPC Countdown Timer for WooCommerce 3.1.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpc-countdown-timer\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-08-20T09:51:17+00:00\n"
+"POT-Creation-Date: 2025-11-26T02:28:29+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.11.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: wpc-countdown-timer\n"
 
 #. Plugin Name of the plugin
@@ -39,322 +39,329 @@ msgstr ""
 msgid "https://wpclever.net"
 msgstr ""
 
-#: wpc-countdown-timer.php:160
-#: wpc-countdown-timer.php:174
-#: wpc-countdown-timer.php:942
+#: wpc-countdown-timer.php:166
+#: wpc-countdown-timer.php:180
+#: wpc-countdown-timer.php:954
 msgid "WPC Countdown Timer"
 msgstr ""
 
-#: wpc-countdown-timer.php:160
+#: wpc-countdown-timer.php:166
 msgid "Countdown Timer"
 msgstr ""
 
-#: wpc-countdown-timer.php:174
+#: wpc-countdown-timer.php:180
 msgid "Premium"
 msgstr ""
 
 #. translators: stars
-#: wpc-countdown-timer.php:177
+#: wpc-countdown-timer.php:183
+#, php-format
 msgid "Thank you for using our plugin! If you are satisfied, please reward it a full five-star %s rating."
 msgstr ""
 
-#: wpc-countdown-timer.php:180
+#: wpc-countdown-timer.php:186
 msgid "Reviews"
 msgstr ""
 
-#: wpc-countdown-timer.php:183
+#: wpc-countdown-timer.php:189
 msgid "Changelog"
 msgstr ""
 
-#: wpc-countdown-timer.php:186
+#: wpc-countdown-timer.php:192
 msgid "Discussion"
 msgstr ""
 
-#: wpc-countdown-timer.php:194
+#: wpc-countdown-timer.php:200
 msgid "Settings updated."
 msgstr ""
 
-#: wpc-countdown-timer.php:201
-#: wpc-countdown-timer.php:805
+#: wpc-countdown-timer.php:207
+#: wpc-countdown-timer.php:817
 msgid "Settings"
 msgstr ""
 
-#: wpc-countdown-timer.php:205
+#: wpc-countdown-timer.php:211
 msgid "Localization"
 msgstr ""
 
-#: wpc-countdown-timer.php:209
+#: wpc-countdown-timer.php:215
 msgid "Shortcode [...]"
 msgstr ""
 
-#: wpc-countdown-timer.php:214
-#: wpc-countdown-timer.php:806
+#: wpc-countdown-timer.php:220
+#: wpc-countdown-timer.php:818
 msgid "Premium Version"
 msgstr ""
 
-#: wpc-countdown-timer.php:218
+#: wpc-countdown-timer.php:224
 msgid "Essential Kit"
 msgstr ""
 
-#: wpc-countdown-timer.php:231
-#: wpc-countdown-timer.php:314
+#: wpc-countdown-timer.php:237
+#: wpc-countdown-timer.php:323
 msgid "General"
 msgstr ""
 
-#: wpc-countdown-timer.php:235
+#: wpc-countdown-timer.php:241
 msgid "Position on archive"
 msgstr ""
 
-#: wpc-countdown-timer.php:238
-#: wpc-countdown-timer.php:252
+#: wpc-countdown-timer.php:244
+#: wpc-countdown-timer.php:258
 msgid "Under title"
 msgstr ""
 
-#: wpc-countdown-timer.php:239
+#: wpc-countdown-timer.php:245
 msgid "Under rating"
 msgstr ""
 
-#: wpc-countdown-timer.php:240
+#: wpc-countdown-timer.php:246
 msgid "Under price"
 msgstr ""
 
-#: wpc-countdown-timer.php:241
-#: wpc-countdown-timer.php:255
+#: wpc-countdown-timer.php:247
+#: wpc-countdown-timer.php:261
 msgid "Above add to cart"
 msgstr ""
 
-#: wpc-countdown-timer.php:242
-#: wpc-countdown-timer.php:256
+#: wpc-countdown-timer.php:248
+#: wpc-countdown-timer.php:262
 msgid "Under add to cart"
 msgstr ""
 
-#: wpc-countdown-timer.php:243
-#: wpc-countdown-timer.php:259
+#: wpc-countdown-timer.php:249
+#: wpc-countdown-timer.php:265
 msgid "None (hide it)"
 msgstr ""
 
 #. translators: shortcode
-#: wpc-countdown-timer.php:245
-#: wpc-countdown-timer.php:261
+#: wpc-countdown-timer.php:251
+#: wpc-countdown-timer.php:267
+#, php-format
 msgid "You also can use shortcode %s to show the countdown timer for current product."
 msgstr ""
 
-#: wpc-countdown-timer.php:249
+#: wpc-countdown-timer.php:255
 msgid "Position on single"
 msgstr ""
 
-#: wpc-countdown-timer.php:253
+#: wpc-countdown-timer.php:259
 msgid "Under price & rating"
 msgstr ""
 
-#: wpc-countdown-timer.php:254
+#: wpc-countdown-timer.php:260
 msgid "Under excerpt"
 msgstr ""
 
-#: wpc-countdown-timer.php:257
+#: wpc-countdown-timer.php:263
 msgid "Under meta"
 msgstr ""
 
-#: wpc-countdown-timer.php:258
+#: wpc-countdown-timer.php:264
 msgid "Under sharing"
 msgstr ""
 
-#: wpc-countdown-timer.php:266
+#: wpc-countdown-timer.php:272
 msgid "Default above text"
 msgstr ""
 
-#: wpc-countdown-timer.php:278
+#: wpc-countdown-timer.php:284
 msgid "Default under text"
 msgstr ""
 
-#: wpc-countdown-timer.php:290
+#: wpc-countdown-timer.php:296
 msgid "Default ended text"
 msgstr ""
 
-#: wpc-countdown-timer.php:316
+#: wpc-countdown-timer.php:312
+#: wpc-countdown-timer.php:423
+msgid "import / export"
+msgstr ""
+
+#: wpc-countdown-timer.php:325
 msgid "Leave blank to use the default text and its equivalent translation in multiple languages."
 msgstr ""
 
-#: wpc-countdown-timer.php:320
+#: wpc-countdown-timer.php:329
 msgid "Zero is plural?"
 msgstr ""
 
-#: wpc-countdown-timer.php:323
-#: wpc-countdown-timer.php:541
+#: wpc-countdown-timer.php:332
+#: wpc-countdown-timer.php:553
 msgid "Yes"
 msgstr ""
 
-#: wpc-countdown-timer.php:324
-#: wpc-countdown-timer.php:542
+#: wpc-countdown-timer.php:333
+#: wpc-countdown-timer.php:554
 msgid "No"
 msgstr ""
 
-#: wpc-countdown-timer.php:329
-#: wpc-countdown-timer.php:333
-#: wpc-countdown-timer.php:699
-#: wpc-countdown-timer.php:756
+#: wpc-countdown-timer.php:338
+#: wpc-countdown-timer.php:342
+#: wpc-countdown-timer.php:711
+#: wpc-countdown-timer.php:768
 msgid "Day"
 msgstr ""
 
-#: wpc-countdown-timer.php:339
-#: wpc-countdown-timer.php:343
-#: wpc-countdown-timer.php:700
-#: wpc-countdown-timer.php:757
-#: wpc-countdown-timer.php:1144
+#: wpc-countdown-timer.php:348
+#: wpc-countdown-timer.php:352
+#: wpc-countdown-timer.php:712
+#: wpc-countdown-timer.php:769
+#: wpc-countdown-timer.php:1156
 msgid "Days"
 msgstr ""
 
-#: wpc-countdown-timer.php:349
-#: wpc-countdown-timer.php:353
-#: wpc-countdown-timer.php:701
-#: wpc-countdown-timer.php:758
+#: wpc-countdown-timer.php:358
+#: wpc-countdown-timer.php:362
+#: wpc-countdown-timer.php:713
+#: wpc-countdown-timer.php:770
 msgid "Hour"
 msgstr ""
 
-#: wpc-countdown-timer.php:359
-#: wpc-countdown-timer.php:363
-#: wpc-countdown-timer.php:702
-#: wpc-countdown-timer.php:759
-#: wpc-countdown-timer.php:1145
+#: wpc-countdown-timer.php:368
+#: wpc-countdown-timer.php:372
+#: wpc-countdown-timer.php:714
+#: wpc-countdown-timer.php:771
+#: wpc-countdown-timer.php:1157
 msgid "Hours"
 msgstr ""
 
-#: wpc-countdown-timer.php:369
-#: wpc-countdown-timer.php:373
-#: wpc-countdown-timer.php:703
-#: wpc-countdown-timer.php:760
+#: wpc-countdown-timer.php:378
+#: wpc-countdown-timer.php:382
+#: wpc-countdown-timer.php:715
+#: wpc-countdown-timer.php:772
 msgid "Minute"
 msgstr ""
 
-#: wpc-countdown-timer.php:379
-#: wpc-countdown-timer.php:383
-#: wpc-countdown-timer.php:704
-#: wpc-countdown-timer.php:761
-#: wpc-countdown-timer.php:1146
+#: wpc-countdown-timer.php:388
+#: wpc-countdown-timer.php:392
+#: wpc-countdown-timer.php:716
+#: wpc-countdown-timer.php:773
+#: wpc-countdown-timer.php:1158
 msgid "Minutes"
 msgstr ""
 
-#: wpc-countdown-timer.php:389
-#: wpc-countdown-timer.php:393
-#: wpc-countdown-timer.php:705
-#: wpc-countdown-timer.php:762
+#: wpc-countdown-timer.php:398
+#: wpc-countdown-timer.php:402
+#: wpc-countdown-timer.php:717
+#: wpc-countdown-timer.php:774
 msgid "Second"
 msgstr ""
 
-#: wpc-countdown-timer.php:399
-#: wpc-countdown-timer.php:403
-#: wpc-countdown-timer.php:706
-#: wpc-countdown-timer.php:763
-#: wpc-countdown-timer.php:1147
+#: wpc-countdown-timer.php:408
+#: wpc-countdown-timer.php:412
+#: wpc-countdown-timer.php:718
+#: wpc-countdown-timer.php:775
+#: wpc-countdown-timer.php:1159
 msgid "Seconds"
 msgstr ""
 
-#: wpc-countdown-timer.php:419
-#: wpc-countdown-timer.php:871
+#: wpc-countdown-timer.php:431
+#: wpc-countdown-timer.php:883
 msgid "Preview"
 msgstr ""
 
-#: wpc-countdown-timer.php:427
+#: wpc-countdown-timer.php:439
 msgid "Shortcode"
 msgstr ""
 
-#: wpc-countdown-timer.php:431
+#: wpc-countdown-timer.php:443
 msgid "Configure the below options to build shortcode and you can place it where you want."
 msgstr ""
 
-#: wpc-countdown-timer.php:496
+#: wpc-countdown-timer.php:508
 msgid "Style 01 (flat)"
 msgstr ""
 
-#: wpc-countdown-timer.php:497
+#: wpc-countdown-timer.php:509
 msgid "Style 02 (square)"
 msgstr ""
 
-#: wpc-countdown-timer.php:498
+#: wpc-countdown-timer.php:510
 msgid "Style 03 (rounded)"
 msgstr ""
 
-#: wpc-countdown-timer.php:499
+#: wpc-countdown-timer.php:511
 msgid "Style 04 (light flipper)"
 msgstr ""
 
-#: wpc-countdown-timer.php:500
+#: wpc-countdown-timer.php:512
 msgid "Style 05 (dark flipper)"
 msgstr ""
 
-#: wpc-countdown-timer.php:501
+#: wpc-countdown-timer.php:513
 msgid "Style 06 (rounded)"
 msgstr ""
 
-#: wpc-countdown-timer.php:502
+#: wpc-countdown-timer.php:514
 msgid "Style 07 (animated)"
 msgstr ""
 
-#: wpc-countdown-timer.php:538
+#: wpc-countdown-timer.php:550
 msgid "Active"
 msgstr ""
 
-#: wpc-countdown-timer.php:548
+#: wpc-countdown-timer.php:560
 msgid "Time"
 msgstr ""
 
-#: wpc-countdown-timer.php:551
+#: wpc-countdown-timer.php:563
 msgid "Custom"
 msgstr ""
 
-#: wpc-countdown-timer.php:552
+#: wpc-countdown-timer.php:564
 msgid "Sale price dates"
 msgstr ""
 
-#: wpc-countdown-timer.php:554
+#: wpc-countdown-timer.php:566
 msgid "If you choose sale price dates, please check your scheduled sale price in the General tab."
 msgstr ""
 
-#: wpc-countdown-timer.php:565
+#: wpc-countdown-timer.php:577
 msgid "Start time"
 msgstr ""
 
-#: wpc-countdown-timer.php:577
+#: wpc-countdown-timer.php:589
 msgid "End time"
 msgstr ""
 
-#: wpc-countdown-timer.php:584
+#: wpc-countdown-timer.php:596
 msgid "Above text"
 msgstr ""
 
-#: wpc-countdown-timer.php:589
+#: wpc-countdown-timer.php:601
 msgid "Under text"
 msgstr ""
 
-#: wpc-countdown-timer.php:594
+#: wpc-countdown-timer.php:606
 msgid "Ended text"
 msgstr ""
 
-#: wpc-countdown-timer.php:599
+#: wpc-countdown-timer.php:611
 msgid "Style"
 msgstr ""
 
-#: wpc-countdown-timer.php:610
+#: wpc-countdown-timer.php:622
 msgid "Color"
 msgstr ""
 
-#: wpc-countdown-timer.php:822
+#: wpc-countdown-timer.php:834
 msgid "Community support"
 msgstr ""
 
-#: wpc-countdown-timer.php:833
-#: wpc-countdown-timer.php:1171
+#: wpc-countdown-timer.php:845
+#: wpc-countdown-timer.php:1183
 msgid "Countdown"
 msgstr ""
 
-#: wpc-countdown-timer.php:856
+#: wpc-countdown-timer.php:868
 msgid "Product wasn't returned."
 msgstr ""
 
-#: wpc-countdown-timer.php:864
+#: wpc-countdown-timer.php:876
 msgid "Current time"
 msgstr ""
 
-#: wpc-countdown-timer.php:868
+#: wpc-countdown-timer.php:880
 msgid "Date/time settings"
 msgstr ""

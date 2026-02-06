@@ -3,8 +3,8 @@ Contributors: wpclever
 Donate link: https://wpclever.net
 Tags: woocommerce, wpc, timer, countdown, clock
 Tested up to: 6.8
-Version: 3.1.4
-Stable tag: 3.1.4
+Version: 3.1.6
+Stable tag: 3.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,7 +39,7 @@ Wanna save your precious time working on variations? Try our brand-new free plug
 
 = Premium Version =
 
-- Build your custom countdown timer to place everywhere you want by using shortcode builder
+- Build your custom countdown timer to place everywhere you want by using a shortcode builder
 
 = Usage =
 
@@ -55,11 +55,11 @@ Users can choose to enable/ disable the active status for the timer separately o
 
 **Setting up the Timer**
 
-When setting up the time, if you leave the starting time box empty, by default, the timer will start counting down from your current time (it starts right after your pressing the button to save the changes).
+When setting up the time, if you leave the starting time box empty, by default, the timer will start counting down from your current time (it starts right after you're pressing the button to save the changes).
 
 The ending time box must be filled with a specific date and time by choosing from the calendar popup, so that the timer will learn when the countdown ends and display the ending notification or hiding the timer accordingly based on your setting.
 
-The ending notification text will be displayed in both shop archive and single product page when the timer ends in replacement of the whole timer block. If this box is left empty, by default, when the counting down ends, the timer will disappear completely from your store.
+The ending notification text will be displayed in both the shop archive and single product page when the timer ends in replacement of the whole timer block. If this box is left empty, by default, when the counting down ends, the timer will disappear completely from your store.
 
 **Position Selection**
 
@@ -79,10 +79,18 @@ Please try other plugins from us:
 
 1. Please make sure that you installed WooCommerce
 2. Go to plugins in your dashboard and select "Add New"
-3. Search for "WPC Countdown Timer", Install & Activate it
-4. When adding/editing the product you can choose the "Countdown" tab then add your countdown timer
+3. Search for "WPC Countdown Timer," Install & Activate it
+4. When adding/editing the product, you can choose the "Countdown" tab, then add your countdown timer
 
 == Changelog ==
+
+= 3.1.6 =
+* Added: Import/export settings
+* Updated: Compatible with WP 6.8 & Woo 10.3
+
+= 3.1.5 =
+* Updated: Optimized the code
+* Updated: Compatible with WP 6.8 & Woo 10.2
 
 = 3.1.4 =
 * Updated: Optimized the code
