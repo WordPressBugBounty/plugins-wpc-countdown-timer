@@ -2,9 +2,9 @@
 Contributors: wpclever
 Donate link: https://wpclever.net
 Tags: woocommerce, wpc, timer, countdown, clock
-Tested up to: 6.8
-Version: 3.1.6
-Stable tag: 3.1.6
+Tested up to: 6.9
+Version: 3.1.7
+Stable tag: 3.1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -83,6 +83,9 @@ Please try other plugins from us:
 4. When adding/editing the product, you can choose the "Countdown" tab, then add your countdown timer
 
 == Changelog ==
+
+= 3.1.7 =
+* Updated: Optimized the code
 
 = 3.1.6 =
 * Added: Import/export settings
