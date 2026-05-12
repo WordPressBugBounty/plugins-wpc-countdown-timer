@@ -3,7 +3,7 @@
 Plugin Name: WPC Countdown Timer for WooCommerce
 Plugin URI: https://wpclever.net/
 Description: WPC Countdown Timer helps you display countdown timer in single product pages and shop page.
-Version: 3.1.8
+Version: 3.1.9
 Author: WPClever
 Author URI: https://wpclever.net
 Text Domain: wpc-countdown-timer
@@ -12,14 +12,14 @@ Requires Plugins: woocommerce
 Requires at least: 4.0
 Tested up to: 6.9
 WC requires at least: 3.0
-WC tested up to: 10.6
+WC tested up to: 10.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 defined( 'ABSPATH' ) || exit;
 
-! defined( 'WOOCT_VERSION' ) && define( 'WOOCT_VERSION', '3.1.8' );
+! defined( 'WOOCT_VERSION' ) && define( 'WOOCT_VERSION', '3.1.9' );
 ! defined( 'WOOCT_LITE' ) && define( 'WOOCT_LITE', __FILE__ );
 ! defined( 'WOOCT_FILE' ) && define( 'WOOCT_FILE', __FILE__ );
 ! defined( 'WOOCT_URI' ) && define( 'WOOCT_URI', plugin_dir_url( __FILE__ ) );
@@ -28,12 +28,14 @@ defined( 'ABSPATH' ) || exit;
 ! defined( 'WOOCT_REVIEWS' ) && define( 'WOOCT_REVIEWS', 'https://wordpress.org/support/plugin/wpc-countdown-timer/reviews/' );
 ! defined( 'WOOCT_CHANGELOG' ) && define( 'WOOCT_CHANGELOG', 'https://wordpress.org/plugins/wpc-countdown-timer/#developers' );
 ! defined( 'WOOCT_DISCUSSION' ) && define( 'WOOCT_DISCUSSION', 'https://wordpress.org/support/plugin/wpc-countdown-timer' );
-! defined( 'WPC_URI' ) && define( 'WPC_URI', WOOCT_URI );
 
-include 'includes/log/wpc-log.php';
-include 'includes/dashboard/wpc-dashboard.php';
-include 'includes/kit/wpc-kit.php';
-include 'includes/hpos.php';
+// WPC Core
+require_once __DIR__ . '/includes/wpc-core/wpc-core.php';
+wpc_core_register( [
+        'file'    => __FILE__,
+        'version' => WOOCT_VERSION,
+        'prefix'  => 'wooct',
+] );
 
 if ( ! function_exists( 'wooct_init' ) ) {
     add_action( 'plugins_loaded', 'wooct_init', 11 );
@@ -286,7 +288,7 @@ if ( ! function_exists( 'wooct_init' ) ) {
                                                 <label>
                                                     <input type="text" name="wooct_settings[text_above]"
                                                            class="large-text"
-                                                           value="<?php echo stripslashes( self::get_setting( 'text_above' ) ); ?>"/>
+                                                           value="<?php echo esc_attr( self::get_setting( 'text_above' ) ); ?>"/>
                                                 </label>
                                             </td>
                                         </tr>
@@ -298,7 +300,7 @@ if ( ! function_exists( 'wooct_init' ) ) {
                                                 <label>
                                                     <input type="text" name="wooct_settings[text_under]"
                                                            class="large-text"
-                                                           value="<?php echo stripslashes( self::get_setting( 'text_under' ) ); ?>"/>
+                                                           value="<?php echo esc_attr( self::get_setting( 'text_under' ) ); ?>"/>
                                                 </label>
                                             </td>
                                         </tr>
@@ -310,7 +312,7 @@ if ( ! function_exists( 'wooct_init' ) ) {
                                                 <label>
                                                     <input type="text" name="wooct_settings[text_ended]"
                                                            class="large-text"
-                                                           value="<?php echo stripslashes( self::get_setting( 'text_ended' ) ); ?>"/>
+                                                           value="<?php echo esc_attr( self::get_setting( 'text_ended' ) ); ?>"/>
                                                 </label>
                                             </td>
                                         </tr>
@@ -623,17 +625,17 @@ if ( ! function_exists( 'wooct_init' ) ) {
 
                     echo $tr;
                     echo $th . esc_html__( 'Above text', 'wpc-countdown-timer' ) . $_th;
-                    echo $td . '<input name="' . esc_attr( 'wooct_text_above' . $name ) . '" value="' . stripslashes( $text_above ) . '" class="wooct_text_above" type="text" style="width: 100%"/>' . $_td;
+                    echo $td . '<input name="' . esc_attr( 'wooct_text_above' . $name ) . '" value="' . esc_attr( $text_above ) . '" class="wooct_text_above" type="text" style="width: 100%"/>' . $_td;
                     echo $_tr;
 
                     echo $tr;
                     echo $th . esc_html__( 'Under text', 'wpc-countdown-timer' ) . $_th;
-                    echo $td . '<input name="' . esc_attr( 'wooct_text_under' . $name ) . '" value="' . stripslashes( $text_under ) . '" class="wooct_text_under" type="text" style="width: 100%"/>' . $_td;
+                    echo $td . '<input name="' . esc_attr( 'wooct_text_under' . $name ) . '" value="' . esc_attr( $text_under ) . '" class="wooct_text_under" type="text" style="width: 100%"/>' . $_td;
                     echo $_tr;
 
                     echo $tr;
                     echo $th . esc_html__( 'Ended text', 'wpc-countdown-timer' ) . $_th;
-                    echo $td . '<input name="' . esc_attr( 'wooct_text_ended' . $name ) . '" value="' . stripslashes( $text_ended ) . '" class="wooct_text_ended" type="text" style="width: 100%"/>' . $_td;
+                    echo $td . '<input name="' . esc_attr( 'wooct_text_ended' . $name ) . '" value="' . esc_attr( $text_ended ) . '" class="wooct_text_ended" type="text" style="width: 100%"/>' . $_td;
                     echo $_tr;
 
                     echo $tr;
@@ -703,7 +705,15 @@ if ( ! function_exists( 'wooct_init' ) ) {
                         die( 'Permissions check failed!' );
                     }
 
-                    echo self::get_countdown( $_POST['style'], $_POST['time_start'], $_POST['time_end'], $_POST['text_above'], $_POST['text_under'], $_POST['text_ended'], $_POST['color'] );
+                    echo self::get_countdown(
+                            sanitize_text_field( wp_unslash( $_POST['style'] ?? '' ) ),
+                            sanitize_text_field( wp_unslash( $_POST['time_start'] ?? '' ) ),
+                            sanitize_text_field( wp_unslash( $_POST['time_end'] ?? '' ) ),
+                            sanitize_text_field( wp_unslash( $_POST['text_above'] ?? '' ) ),
+                            sanitize_text_field( wp_unslash( $_POST['text_under'] ?? '' ) ),
+                            sanitize_text_field( wp_unslash( $_POST['text_ended'] ?? '' ) ),
+                            sanitize_hex_color( wp_unslash( $_POST['color'] ?? '' ) )
+                    );
 
                     wp_die();
                 }
@@ -947,19 +957,19 @@ if ( ! function_exists( 'wooct_init' ) ) {
                     }
 
                     if ( isset( $_POST['wooct_text_above'] ) ) {
-                        update_post_meta( $post_id, 'wooct_text_above', addslashes( $_POST['wooct_text_above'] ) );
+                        update_post_meta( $post_id, 'wooct_text_above', sanitize_text_field( wp_unslash( $_POST['wooct_text_above'] ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_text_above' );
                     }
 
                     if ( isset( $_POST['wooct_text_under'] ) ) {
-                        update_post_meta( $post_id, 'wooct_text_under', addslashes( $_POST['wooct_text_under'] ) );
+                        update_post_meta( $post_id, 'wooct_text_under', sanitize_text_field( wp_unslash( $_POST['wooct_text_under'] ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_text_under' );
                     }
 
                     if ( isset( $_POST['wooct_text_ended'] ) ) {
-                        update_post_meta( $post_id, 'wooct_text_ended', addslashes( $_POST['wooct_text_ended'] ) );
+                        update_post_meta( $post_id, 'wooct_text_ended', sanitize_text_field( wp_unslash( $_POST['wooct_text_ended'] ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_text_ended' );
                     }
@@ -1014,19 +1024,19 @@ if ( ! function_exists( 'wooct_init' ) ) {
                     }
 
                     if ( isset( $_POST['wooct_text_above_v'][ $post_id ] ) ) {
-                        update_post_meta( $post_id, 'wooct_text_above', addslashes( $_POST['wooct_text_above_v'][ $post_id ] ) );
+                        update_post_meta( $post_id, 'wooct_text_above', sanitize_text_field( wp_unslash( $_POST['wooct_text_above_v'][ $post_id ] ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_text_above' );
                     }
 
                     if ( isset( $_POST['wooct_text_under_v'][ $post_id ] ) ) {
-                        update_post_meta( $post_id, 'wooct_text_under', addslashes( $_POST['wooct_text_under_v'][ $post_id ] ) );
+                        update_post_meta( $post_id, 'wooct_text_under', sanitize_text_field( wp_unslash( $_POST['wooct_text_under_v'][ $post_id ] ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_text_under' );
                     }
 
                     if ( isset( $_POST['wooct_text_ended_v'][ $post_id ] ) ) {
-                        update_post_meta( $post_id, 'wooct_text_ended', addslashes( $_POST['wooct_text_ended_v'][ $post_id ] ) );
+                        update_post_meta( $post_id, 'wooct_text_ended', sanitize_text_field( wp_unslash( $_POST['wooct_text_ended_v'][ $post_id ] ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_text_ended' );
                     }
@@ -1164,7 +1174,7 @@ if ( ! function_exists( 'wooct_init' ) ) {
                             if ( ! empty( $text_ended ) ) {
                                 $class     = 'wooct-countdown wooct-countdown-' . esc_attr( $key ) . ' wooct-ended wooct-style-' . esc_attr( $style );
                                 $countdown .= '<div class="' . esc_attr( apply_filters( 'wooct_class_ended', $class ) ) . '">';
-                                $countdown .= '<div class="wooct-text-ended">' . stripslashes( $text_ended ) . '</div>';
+                                $countdown .= '<div class="wooct-text-ended">' . wp_kses_post( $text_ended ) . '</div>';
 
                                 if ( ! empty( $css ) ) {
                                     $countdown .= '<div class="wooct-css"><style>' . $css . '</style></div>';
@@ -1174,10 +1184,10 @@ if ( ! function_exists( 'wooct_init' ) ) {
                             }
                         } else {
                             $class     = 'wooct-countdown wooct-countdown-' . esc_attr( $key ) . ' wooct-running wooct-style-' . esc_attr( $style ) . ' ' . ( $style === '04' || $style === '05' ? 'wooct-flipper' : '' );
-                            $countdown .= '<div class="' . esc_attr( apply_filters( 'wooct_class', $class ) ) . '" data-css="' . esc_attr( $css ) . '" data-style="' . esc_attr( $style ) . '" data-timer="' . esc_attr( $time_end ) . '" data-ended="' . htmlentities( stripslashes( $text_ended ) ) . '">';
+                            $countdown .= '<div class="' . esc_attr( apply_filters( 'wooct_class', $class ) ) . '" data-css="' . esc_attr( $css ) . '" data-style="' . esc_attr( $style ) . '" data-timer="' . esc_attr( $time_end ) . '" data-ended="' . esc_attr( $text_ended ) . '">';
 
                             if ( ! empty( $text_above ) ) {
-                                $countdown .= '<div class="wooct-text-above">' . stripslashes( $text_above ) . '</div>';
+                                $countdown .= '<div class="wooct-text-above">' . wp_kses_post( $text_above ) . '</div>';
                             }
 
                             if ( $style === '04' || $style === '05' ) {
@@ -1194,7 +1204,7 @@ if ( ! function_exists( 'wooct_init' ) ) {
                             }
 
                             if ( ! empty( $text_under ) ) {
-                                $countdown .= '<div class="wooct-text-under">' . stripslashes( $text_under ) . '</div>';
+                                $countdown .= '<div class="wooct-text-under">' . wp_kses_post( $text_under ) . '</div>';
                             }
 
                             if ( ! empty( $css ) ) {
