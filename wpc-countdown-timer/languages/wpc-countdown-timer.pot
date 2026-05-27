@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPC Countdown Timer for WooCommerce 3.1.9\n"
+"Project-Id-Version: WPC Countdown Timer for WooCommerce 3.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpc-countdown-timer\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-12T15:42:38+00:00\n"
+"POT-Creation-Date: 2026-05-27T08:57:13+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: wpc-countdown-timer\n"
@@ -41,7 +41,7 @@ msgstr ""
 
 #: wpc-countdown-timer.php:179
 #: wpc-countdown-timer.php:193
-#: wpc-countdown-timer.php:993
+#: wpc-countdown-timer.php:995
 msgid "WPC Countdown Timer"
 msgstr ""
 
@@ -76,7 +76,7 @@ msgid "Settings updated."
 msgstr ""
 
 #: wpc-countdown-timer.php:220
-#: wpc-countdown-timer.php:856
+#: wpc-countdown-timer.php:854
 msgid "Settings"
 msgstr ""
 
@@ -89,7 +89,7 @@ msgid "Shortcode [...]"
 msgstr ""
 
 #: wpc-countdown-timer.php:233
-#: wpc-countdown-timer.php:857
+#: wpc-countdown-timer.php:855
 msgid "Premium Version"
 msgstr ""
 
@@ -198,66 +198,66 @@ msgstr ""
 
 #: wpc-countdown-timer.php:360
 #: wpc-countdown-timer.php:364
-#: wpc-countdown-timer.php:750
-#: wpc-countdown-timer.php:807
+#: wpc-countdown-timer.php:749
+#: wpc-countdown-timer.php:805
 msgid "Day"
 msgstr ""
 
 #: wpc-countdown-timer.php:370
 #: wpc-countdown-timer.php:374
-#: wpc-countdown-timer.php:751
-#: wpc-countdown-timer.php:808
-#: wpc-countdown-timer.php:1195
+#: wpc-countdown-timer.php:750
+#: wpc-countdown-timer.php:806
+#: wpc-countdown-timer.php:1201
 msgid "Days"
 msgstr ""
 
 #: wpc-countdown-timer.php:380
 #: wpc-countdown-timer.php:384
-#: wpc-countdown-timer.php:752
-#: wpc-countdown-timer.php:809
+#: wpc-countdown-timer.php:751
+#: wpc-countdown-timer.php:807
 msgid "Hour"
 msgstr ""
 
 #: wpc-countdown-timer.php:390
 #: wpc-countdown-timer.php:394
-#: wpc-countdown-timer.php:753
-#: wpc-countdown-timer.php:810
-#: wpc-countdown-timer.php:1196
+#: wpc-countdown-timer.php:752
+#: wpc-countdown-timer.php:808
+#: wpc-countdown-timer.php:1202
 msgid "Hours"
 msgstr ""
 
 #: wpc-countdown-timer.php:400
 #: wpc-countdown-timer.php:404
-#: wpc-countdown-timer.php:754
-#: wpc-countdown-timer.php:811
+#: wpc-countdown-timer.php:753
+#: wpc-countdown-timer.php:809
 msgid "Minute"
 msgstr ""
 
 #: wpc-countdown-timer.php:410
 #: wpc-countdown-timer.php:414
-#: wpc-countdown-timer.php:755
-#: wpc-countdown-timer.php:812
-#: wpc-countdown-timer.php:1197
+#: wpc-countdown-timer.php:754
+#: wpc-countdown-timer.php:810
+#: wpc-countdown-timer.php:1203
 msgid "Minutes"
 msgstr ""
 
 #: wpc-countdown-timer.php:420
 #: wpc-countdown-timer.php:424
-#: wpc-countdown-timer.php:756
-#: wpc-countdown-timer.php:813
+#: wpc-countdown-timer.php:755
+#: wpc-countdown-timer.php:811
 msgid "Second"
 msgstr ""
 
 #: wpc-countdown-timer.php:430
 #: wpc-countdown-timer.php:434
-#: wpc-countdown-timer.php:757
-#: wpc-countdown-timer.php:814
-#: wpc-countdown-timer.php:1198
+#: wpc-countdown-timer.php:756
+#: wpc-countdown-timer.php:812
+#: wpc-countdown-timer.php:1204
 msgid "Seconds"
 msgstr ""
 
 #: wpc-countdown-timer.php:462
-#: wpc-countdown-timer.php:922
+#: wpc-countdown-timer.php:920
 msgid "Preview"
 msgstr ""
 
@@ -345,23 +345,23 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
-#: wpc-countdown-timer.php:873
+#: wpc-countdown-timer.php:871
 msgid "Community support"
 msgstr ""
 
-#: wpc-countdown-timer.php:884
-#: wpc-countdown-timer.php:1222
+#: wpc-countdown-timer.php:882
+#: wpc-countdown-timer.php:1228
 msgid "Countdown"
 msgstr ""
 
-#: wpc-countdown-timer.php:907
+#: wpc-countdown-timer.php:905
 msgid "Product wasn't returned."
 msgstr ""
 
-#: wpc-countdown-timer.php:915
+#: wpc-countdown-timer.php:913
 msgid "Current time"
 msgstr ""
 
-#: wpc-countdown-timer.php:919
+#: wpc-countdown-timer.php:917
 msgid "Date/time settings"
 msgstr ""
