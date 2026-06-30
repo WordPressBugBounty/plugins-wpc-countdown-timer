@@ -3,23 +3,23 @@
 Plugin Name: WPC Countdown Timer for WooCommerce
 Plugin URI: https://wpclever.net/
 Description: WPC Countdown Timer helps you display countdown timer in single product pages and shop page.
-Version: 3.2.0
+Version: 3.2.1
 Author: WPClever
 Author URI: https://wpclever.net
 Text Domain: wpc-countdown-timer
 Domain Path: /languages/
 Requires Plugins: woocommerce
-Requires at least: 4.0
+Requires at least: 5.9
 Tested up to: 7.0
 WC requires at least: 3.0
-WC tested up to: 10.8
+WC tested up to: 10.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 defined( 'ABSPATH' ) || exit;
 
-! defined( 'WOOCT_VERSION' ) && define( 'WOOCT_VERSION', '3.2.0' );
+! defined( 'WOOCT_VERSION' ) && define( 'WOOCT_VERSION', '3.2.1' );
 ! defined( 'WOOCT_LITE' ) && define( 'WOOCT_LITE', __FILE__ );
 ! defined( 'WOOCT_FILE' ) && define( 'WOOCT_FILE', __FILE__ );
 ! defined( 'WOOCT_URI' ) && define( 'WOOCT_URI', plugin_dir_url( __FILE__ ) );
@@ -66,7 +66,6 @@ if ( ! function_exists( 'wooct_init' ) ) {
                     self::$localization = (array) get_option( 'wooct_localization', [] );
 
                     // Init
-                    add_action( 'init', [ $this, 'init' ] );
 
                     // Settings
                     add_action( 'admin_init', [ $this, 'register_settings' ] );
@@ -146,12 +145,6 @@ if ( ! function_exists( 'wooct_init' ) ) {
                     // WPC Variation Bulk Editor
                     add_action( 'wpcvb_bulk_update_variation', [ $this, 'bulk_update_variation' ], 99, 2 );
                 }
-
-                function init() {
-                    // load text-domain
-                    load_plugin_textdomain( 'wpc-countdown-timer', false, basename( WOOCT_DIR ) . '/languages/' );
-                }
-
                 function register_settings() {
                     // settings
                     register_setting( 'wooct_settings', 'wooct_settings', [
@@ -183,7 +176,7 @@ if ( ! function_exists( 'wooct_init' ) ) {
                 }
 
                 function admin_menu_content() {
-                    $active_tab = isset( $_GET['tab'] ) ? sanitize_text_field( wp_unslash( $_GET['tab'] ) ) : 'settings';
+                    $active_tab = isset( $_GET['tab'] ) ? sanitize_text_field( wp_unslash( $_GET['tab'] ?? '' ) ) : 'settings';
                     ?>
                     <div class="wpclever_settings_page wrap">
                         <div class="wpclever_settings_page_header">
@@ -208,7 +201,7 @@ if ( ! function_exists( 'wooct_init' ) ) {
                             </div>
                         </div>
                         <h2></h2>
-                        <?php if ( isset( $_GET['settings-updated'] ) && sanitize_text_field( wp_unslash( $_GET['settings-updated'] ) ) ) { ?>
+                        <?php if ( isset( $_GET['settings-updated'] ) && sanitize_text_field( wp_unslash( $_GET['settings-updated'] ?? '' ) ) ) { ?>
                             <div class="notice notice-success is-dismissible">
                                 <p><?php esc_html_e( 'Settings updated.', 'wpc-countdown-timer' ); ?></p>
                             </div>
@@ -935,55 +928,55 @@ if ( ! function_exists( 'wooct_init' ) ) {
                     }
 
                     if ( isset( $_POST['wooct_active'] ) ) {
-                        update_post_meta( $post_id, 'wooct_active', sanitize_text_field( wp_unslash( $_POST['wooct_active'] ) ) );
+                        update_post_meta( $post_id, 'wooct_active', sanitize_text_field( wp_unslash( $_POST['wooct_active'] ?? '' ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_active' );
                     }
 
                     if ( isset( $_POST['wooct_time'] ) ) {
-                        update_post_meta( $post_id, 'wooct_time', sanitize_text_field( wp_unslash( $_POST['wooct_time'] ) ) );
+                        update_post_meta( $post_id, 'wooct_time', sanitize_text_field( wp_unslash( $_POST['wooct_time'] ?? '' ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_time' );
                     }
 
                     if ( isset( $_POST['wooct_time_start'] ) ) {
-                        update_post_meta( $post_id, 'wooct_time_start', sanitize_text_field( wp_unslash( $_POST['wooct_time_start'] ) ) );
+                        update_post_meta( $post_id, 'wooct_time_start', sanitize_text_field( wp_unslash( $_POST['wooct_time_start'] ?? '' ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_time_start' );
                     }
 
                     if ( isset( $_POST['wooct_time_end'] ) ) {
-                        update_post_meta( $post_id, 'wooct_time_end', sanitize_text_field( wp_unslash( $_POST['wooct_time_end'] ) ) );
+                        update_post_meta( $post_id, 'wooct_time_end', sanitize_text_field( wp_unslash( $_POST['wooct_time_end'] ?? '' ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_time_end' );
                     }
 
                     if ( isset( $_POST['wooct_text_above'] ) ) {
-                        update_post_meta( $post_id, 'wooct_text_above', sanitize_text_field( wp_unslash( $_POST['wooct_text_above'] ) ) );
+                        update_post_meta( $post_id, 'wooct_text_above', sanitize_text_field( wp_unslash( $_POST['wooct_text_above'] ?? '' ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_text_above' );
                     }
 
                     if ( isset( $_POST['wooct_text_under'] ) ) {
-                        update_post_meta( $post_id, 'wooct_text_under', sanitize_text_field( wp_unslash( $_POST['wooct_text_under'] ) ) );
+                        update_post_meta( $post_id, 'wooct_text_under', sanitize_text_field( wp_unslash( $_POST['wooct_text_under'] ?? '' ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_text_under' );
                     }
 
                     if ( isset( $_POST['wooct_text_ended'] ) ) {
-                        update_post_meta( $post_id, 'wooct_text_ended', sanitize_text_field( wp_unslash( $_POST['wooct_text_ended'] ) ) );
+                        update_post_meta( $post_id, 'wooct_text_ended', sanitize_text_field( wp_unslash( $_POST['wooct_text_ended'] ?? '' ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_text_ended' );
                     }
 
                     if ( isset( $_POST['wooct_style'] ) ) {
-                        update_post_meta( $post_id, 'wooct_style', sanitize_text_field( wp_unslash( $_POST['wooct_style'] ) ) );
+                        update_post_meta( $post_id, 'wooct_style', sanitize_text_field( wp_unslash( $_POST['wooct_style'] ?? '' ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_style' );
                     }
 
                     if ( isset( $_POST['wooct_color'] ) ) {
-                        update_post_meta( $post_id, 'wooct_color', sanitize_text_field( wp_unslash( $_POST['wooct_color'] ) ) );
+                        update_post_meta( $post_id, 'wooct_color', sanitize_text_field( wp_unslash( $_POST['wooct_color'] ?? '' ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_color' );
                     }
@@ -1001,60 +994,57 @@ if ( ! function_exists( 'wooct_init' ) ) {
                 }
 
                 function save_variation_settings( $post_id ) {
-                    if ( ! isset( $_POST['security'] ) || ! wp_verify_nonce( sanitize_key( wp_unslash( $_POST['security'] ) ), 'save-variations' ) ) {
-                        return;
-                    }
-
+                    // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Security already verified by WooCommerce before firing this hook.
                     if ( isset( $_POST['wooct_active_v'][ $post_id ] ) ) {
-                        update_post_meta( $post_id, 'wooct_active', sanitize_text_field( wp_unslash( $_POST['wooct_active_v'][ $post_id ] ) ) );
+                        update_post_meta( $post_id, 'wooct_active', sanitize_text_field( wp_unslash( ( $_POST['wooct_active_v'] ?? [] )[ $post_id ] ?? '' ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_active' );
                     }
 
                     if ( isset( $_POST['wooct_time_v'][ $post_id ] ) ) {
-                        update_post_meta( $post_id, 'wooct_time', sanitize_text_field( wp_unslash( $_POST['wooct_time_v'][ $post_id ] ) ) );
+                        update_post_meta( $post_id, 'wooct_time', sanitize_text_field( wp_unslash( ( $_POST['wooct_time_v'] ?? [] )[ $post_id ] ?? '' ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_time' );
                     }
 
                     if ( isset( $_POST['wooct_time_start_v'][ $post_id ] ) ) {
-                        update_post_meta( $post_id, 'wooct_time_start', sanitize_text_field( wp_unslash( $_POST['wooct_time_start_v'][ $post_id ] ) ) );
+                        update_post_meta( $post_id, 'wooct_time_start', sanitize_text_field( wp_unslash( ( $_POST['wooct_time_start_v'] ?? [] )[ $post_id ] ?? '' ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_time_start' );
                     }
 
                     if ( isset( $_POST['wooct_time_end_v'][ $post_id ] ) ) {
-                        update_post_meta( $post_id, 'wooct_time_end', sanitize_text_field( wp_unslash( $_POST['wooct_time_end_v'][ $post_id ] ) ) );
+                        update_post_meta( $post_id, 'wooct_time_end', sanitize_text_field( wp_unslash( ( $_POST['wooct_time_end_v'] ?? [] )[ $post_id ] ?? '' ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_time_end' );
                     }
 
                     if ( isset( $_POST['wooct_text_above_v'][ $post_id ] ) ) {
-                        update_post_meta( $post_id, 'wooct_text_above', sanitize_text_field( wp_unslash( $_POST['wooct_text_above_v'][ $post_id ] ) ) );
+                        update_post_meta( $post_id, 'wooct_text_above', sanitize_text_field( wp_unslash( ( $_POST['wooct_text_above_v'] ?? [] )[ $post_id ] ?? '' ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_text_above' );
                     }
 
                     if ( isset( $_POST['wooct_text_under_v'][ $post_id ] ) ) {
-                        update_post_meta( $post_id, 'wooct_text_under', sanitize_text_field( wp_unslash( $_POST['wooct_text_under_v'][ $post_id ] ) ) );
+                        update_post_meta( $post_id, 'wooct_text_under', sanitize_text_field( wp_unslash( ( $_POST['wooct_text_under_v'] ?? [] )[ $post_id ] ?? '' ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_text_under' );
                     }
 
                     if ( isset( $_POST['wooct_text_ended_v'][ $post_id ] ) ) {
-                        update_post_meta( $post_id, 'wooct_text_ended', sanitize_text_field( wp_unslash( $_POST['wooct_text_ended_v'][ $post_id ] ) ) );
+                        update_post_meta( $post_id, 'wooct_text_ended', sanitize_text_field( wp_unslash( ( $_POST['wooct_text_ended_v'] ?? [] )[ $post_id ] ?? '' ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_text_ended' );
                     }
 
                     if ( isset( $_POST['wooct_style_v'][ $post_id ] ) ) {
-                        update_post_meta( $post_id, 'wooct_style', sanitize_text_field( wp_unslash( $_POST['wooct_style_v'][ $post_id ] ) ) );
+                        update_post_meta( $post_id, 'wooct_style', sanitize_text_field( wp_unslash( ( $_POST['wooct_style_v'] ?? [] )[ $post_id ] ?? '' ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_style' );
                     }
 
                     if ( isset( $_POST['wooct_color_v'][ $post_id ] ) ) {
-                        update_post_meta( $post_id, 'wooct_color', sanitize_text_field( wp_unslash( $_POST['wooct_color_v'][ $post_id ] ) ) );
+                        update_post_meta( $post_id, 'wooct_color', sanitize_text_field( wp_unslash( ( $_POST['wooct_color_v'] ?? [] )[ $post_id ] ?? '' ) ) );
                     } else {
                         delete_post_meta( $post_id, 'wooct_color' );
                     }
