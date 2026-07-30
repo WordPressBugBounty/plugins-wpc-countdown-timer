@@ -3,7 +3,7 @@
 Plugin Name: WPC Countdown Timer for WooCommerce
 Plugin URI: https://wpclever.net/
 Description: WPC Countdown Timer helps you display countdown timer in single product pages and shop page.
-Version: 3.2.1
+Version: 3.2.2
 Author: WPClever
 Author URI: https://wpclever.net
 Text Domain: wpc-countdown-timer
@@ -19,7 +19,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 defined( 'ABSPATH' ) || exit;
 
-! defined( 'WOOCT_VERSION' ) && define( 'WOOCT_VERSION', '3.2.1' );
+! defined( 'WOOCT_VERSION' ) && define( 'WOOCT_VERSION', '3.2.2' );
 ! defined( 'WOOCT_LITE' ) && define( 'WOOCT_LITE', __FILE__ );
 ! defined( 'WOOCT_FILE' ) && define( 'WOOCT_FILE', __FILE__ );
 ! defined( 'WOOCT_URI' ) && define( 'WOOCT_URI', plugin_dir_url( __FILE__ ) );
@@ -573,10 +573,10 @@ if ( ! function_exists( 'wooct_init' ) ) {
                         echo $tr;
                         echo $th . esc_html__( 'Active', 'wpc-countdown-timer' ) . $_th;
                         echo $td;
-                        echo '<select name="' . esc_attr( 'wooct_active' . $name ) . '" class="wooct_active">';
-                        echo '<option value="yes" ' . selected( $active, 'yes', false ) . '>' . esc_html__( 'Yes', 'wpc-countdown-timer' ) . '</option>';
-                        echo '<option value="no" ' . selected( $active, 'no', false ) . '>' . esc_html__( 'No', 'wpc-countdown-timer' ) . '</option>';
-                        echo '</select>';
+                        echo '<label class="wooct-switch">';
+                        echo '<input type="checkbox" name="' . esc_attr( 'wooct_active' . $name ) . '" class="wooct_active" value="yes" ' . checked( $active, 'yes', false ) . '/>';
+                        echo '<span class="wooct-slider"></span>';
+                        echo '</label>';
                         echo $_td;
                         echo $_tr;
 

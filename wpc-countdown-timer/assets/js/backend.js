@@ -72,50 +72,54 @@
     });
   }
 
+  function wooct_is_active($activeSelect) {
+    if ($activeSelect.is(':checkbox')) {
+      return $activeSelect.is(':checked');
+    }
+    return $activeSelect.val() === 'yes';
+  }
+
   function wooct_active($form = null) {
-    if ($form) {
-      var active = $form.find('.wooct_active').val();
+    var $forms = $form ? $form : $('.wooct_time_form');
 
-      if (active === 'yes') {
-        $form.find('.form-field').show();
-      } else {
-        $form.find('.form-field').each(function() {
-          if (!$(this).find('.wooct_active').length) {
-            $(this).hide();
-          }
-        });
-      }
-    } else {
-      $('.wooct_active').each(function() {
-        var active = $(this).val();
-        var $form = $(this).closest('.wooct_time_form');
+    $forms.each(function() {
+      var $currentForm = $(this);
+      var $activeSelect = $currentForm.find('.wooct_active');
 
-        if (active === 'yes') {
-          $form.find('.form-field').show();
+      if ($activeSelect.length) {
+        var is_active = wooct_is_active($activeSelect);
+
+        if (is_active) {
+          $currentForm.find('tr, .form-field').show();
+          $currentForm.closest('#wooct_settings').find('.wooct_preview').show();
+          wooct_time_type($currentForm);
         } else {
-          $form.find('.form-field').each(function() {
+          $currentForm.find('tr, .form-field').each(function() {
             if (!$(this).find('.wooct_active').length) {
               $(this).hide();
             }
           });
+          $currentForm.closest('#wooct_settings').find('.wooct_preview').hide();
         }
-      });
-    }
+      }
+    });
   }
 
-  function wooct_time_type() {
-    if ($('.wooct_time').length) {
-      $('.wooct_time').each(function() {
-        if ($(this).val() == 'custom') {
-          $(this).
-              closest('.wooct_time_form').
-              find('.wooct_show_if_custom').
-              show();
-        } else {
-          $(this).
-              closest('.wooct_time_form').
-              find('.wooct_show_if_custom').
-              hide();
+  function wooct_time_type($form = null) {
+    var $times = $form ? $form.find('.wooct_time') : $('.wooct_time');
+
+    if ($times.length) {
+      $times.each(function() {
+        var $parentForm = $(this).closest('.wooct_time_form');
+        var $activeSelect = $parentForm.find('.wooct_active');
+        var is_active = $activeSelect.length ? wooct_is_active($activeSelect) : true;
+
+        if (is_active) {
+          if ($(this).val() == 'custom') {
+            $parentForm.find('.wooct_show_if_custom').show();
+          } else {
+            $parentForm.find('.wooct_show_if_custom').hide();
+          }
         }
       });
     }

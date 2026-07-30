@@ -319,3 +319,63 @@
     padding: 16px;
     overflow: auto;
 }
+
+/* Switch toggle */
+
+.wooct-switch {
+    position: relative;
+    display: inline-block;
+    width: 40px !important;
+    height: 22px;
+    vertical-align: middle;
+    float: none !important;
+    margin: 0 !important;
+}
+
+.wooct-switch input {
+    opacity: 0;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.wooct-switch .wooct-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .2s;
+    transition: .2s;
+    border-radius: 22px;
+}
+
+.wooct-switch .wooct-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .2s;
+    transition: .2s;
+    border-radius: 50%;
+}
+
+.wooct-switch input:checked + .wooct-slider {
+    background-color: #2271b1;
+}
+
+.wooct-switch input:focus + .wooct-slider {
+    box-shadow: 0 0 1px #2271b1;
+}
+
+.wooct-switch input:checked + .wooct-slider:before {
+    -webkit-transform: translateX(18px);
+    -ms-transform: translateX(18px);
+    transform: translateX(18px);
+}
