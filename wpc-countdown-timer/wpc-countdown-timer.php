@@ -8,17 +8,17 @@ Author URI: https://wpclever.net
 Text Domain: wpc-countdown-timer
 Domain Path: /languages/
 Requires Plugins: woocommerce
-Version: 3.2.3
+Version: 3.2.4
 Requires at least: 5.9
 WC requires at least: 3.0
-WC tested up to: 11.1
+WC tested up to: 11.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 defined( 'ABSPATH' ) || exit;
 
-! defined( 'WOOCT_VERSION' ) && define( 'WOOCT_VERSION', '3.2.3' );
+! defined( 'WOOCT_VERSION' ) && define( 'WOOCT_VERSION', '3.2.4' );
 ! defined( 'WOOCT_LITE' ) && define( 'WOOCT_LITE', __FILE__ );
 ! defined( 'WOOCT_FILE' ) && define( 'WOOCT_FILE', __FILE__ );
 ! defined( 'WOOCT_URI' ) && define( 'WOOCT_URI', plugin_dir_url( __FILE__ ) );
